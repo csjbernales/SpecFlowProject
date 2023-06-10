@@ -1,5 +1,5 @@
-﻿global using FluentAssertions;
+﻿global using OpenQA.Selenium;
 
-global using NUnit;
+global using Selenium.DefaultWaitHelpers;
 
 global using TechTalk.SpecFlow;

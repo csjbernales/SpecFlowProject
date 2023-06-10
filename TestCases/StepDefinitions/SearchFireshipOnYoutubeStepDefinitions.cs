@@ -1,36 +1,30 @@
-using OpenQA.Selenium;
-using OpenQA.Selenium.Edge;
+using PageObjectModel.Google;
 
 namespace TestCases.StepDefinitions
 {
     [Binding]
-    public class SearchFireshipOnYoutubeStepDefinitions
+    public class SearchFisreshipOnYoutubeStepDefinitions : BaseClass
     {
-        private IWebDriver? driver;
-
-        [Given(@"Open browser")]
-        public void GivenOpenBrowser()
+        [Given(@"Launch browser")]
+        public void GivenLaunchBrowser()
         {
-            driver = new EdgeDriver();
             driver.Manage().Window.Maximize();
         }
 
-        [When(@"webpage is on youtube\.com")]
-        public void WhenWebpageIsOnYoutube_Com()
+        [When(@"Webpage is on google.com")]
+        public void WhenWebpageIsOnGoogle_Com()
         {
-            driver!.Url = "http://youtube.com/";
+            driver.Navigate().GoToUrl("https://google.com");
         }
 
         [Then(@"search fireship on searchbar")]
         public void ThenSearchFireshipOnSearchbar()
         {
-            var searchBar = driver!.FindElement(By.XPath("//input[contains(@id,'search')]")); //@FindBy(xpath = "//input[contains(@id,'search')]")
-            searchBar.SendKeys("Fireship");
-            searchBar.SendKeys(Keys.Enter);
+            Homepage homepage = new(driver);
+            homepage.SearchBox.SendKeys("Fireship");
+            homepage.SearchBox.SendKeys(Keys.Enter);
 
-            Thread.Sleep(2000);
-
-            driver.Close();
+            driver.FindElement(By.XPath("//div/div/span[text()='Fireship'][1]"), WaitForElement.Visible);
         }
     }
 }

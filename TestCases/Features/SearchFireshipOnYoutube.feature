@@ -1,9 +1,9 @@
-﻿Feature: SearchFireshipOnYoutube
+﻿Feature: GoogleSearch
 
-Search 'Fireship' on youtube
+Perform a Google search
 
-@Youtube
-Scenario: Search fireship on youtube
-	Given Open browser
-	When webpage is on youtube.com
+@Google
+Scenario: Search Fireship on Google
+	Given Launch browser
+	When Webpage is on google.com
 	Then search fireship on searchbar
