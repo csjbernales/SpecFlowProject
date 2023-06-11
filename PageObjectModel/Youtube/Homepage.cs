@@ -1,8 +1,8 @@
-﻿namespace PageObjectModel.Google
+﻿namespace PageObjectModel.Youtube
 {
     public class Homepage
     {
-        [FindsBy(How = How.XPath, Using = "//textarea[@title='Search']")]
+        [FindsBy(How = How.Id, Using = "search")]
         public IWebElement? SearchBox { get; set; }
 
         private readonly IWebDriver? webDriver;
