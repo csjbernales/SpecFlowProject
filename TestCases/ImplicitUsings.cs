@@ -3,3 +3,5 @@
 global using Selenium.DefaultWaitHelpers;
 
 global using TechTalk.SpecFlow;
+
+global using TestFramework;

@@ -1,8 +1,10 @@
 ﻿using OpenQA.Selenium.Edge;
 
+
+
 namespace TestCases
 {
-    public class BaseClass
+    public class BaseClass : Util
     {
         public IWebDriver driver;
 

@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PageObjectModel\PageObjectModel.csproj" />
+    <ProjectReference Include="..\TestFramework\TestFramework.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,20 +11,25 @@ namespace TestCases.StepDefinitions
             driver.Manage().Window.Maximize();
         }
 
-        [When(@"Webpage is on google.com")]
-        public void WhenWebpageIsOnGoogle_Com()
+        [When(@"Webpage is on (.*)")]
+        public void WhenWebpageIsOnGoogle_Com(string url)
         {
-            driver.Navigate().GoToUrl("https://google.com");
+            driver.Navigate().GoToUrl(url);
         }
 
-        [Then(@"search fireship on searchbar")]
-        public void ThenSearchFireshipOnSearchbar()
+        [Then(@"search (.*) on searchbar")]
+        public void ThenSearchFireshipOnSearchbar(string keyword)
         {
             Homepage homepage = new(driver);
-            homepage.SearchBox.SendKeys("Fireship");
-            homepage.SearchBox.SendKeys(Keys.Enter);
+            TextThenEnter(keyword, homepage);
 
             driver.FindElement(By.XPath("//div/div/span[text()='Fireship'][1]"), WaitForElement.Visible);
+        }
+
+        private static void TextThenEnter(string keyword, Homepage homepage)
+        {
+            homepage.SearchBox.SendKeys(keyword);
+            homepage.SearchBox.SendKeys(Keys.Enter);
         }
     }
 }
