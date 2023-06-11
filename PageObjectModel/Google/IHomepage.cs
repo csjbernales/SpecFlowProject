@@ -1,6 +1,6 @@
 ﻿namespace PageObjectModel.Google
 {
-    public interface IHomepage
+    public interface IHomepage : IObjectInterface
     {
         IWebElement SearchBox { get; set; }
     }

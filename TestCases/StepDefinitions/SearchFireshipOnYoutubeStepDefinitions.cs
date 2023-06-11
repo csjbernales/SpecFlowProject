@@ -20,16 +20,10 @@ namespace TestCases.StepDefinitions
         [Then(@"search (.*) on searchbar")]
         public void ThenSearchFireshipOnSearchbar(string keyword)
         {
-            Homepage homepage = new(driver);
+            IHomepage homepage = new Homepage(driver);
             TextThenEnter(keyword, homepage);
 
             driver.FindElement(By.XPath("//div/div/span[text()='Fireship'][1]"), WaitForElement.Visible);
-        }
-
-        private static void TextThenEnter(string keyword, Homepage homepage)
-        {
-            homepage.SearchBox.SendKeys(keyword);
-            homepage.SearchBox.SendKeys(Keys.Enter);
         }
     }
 }
