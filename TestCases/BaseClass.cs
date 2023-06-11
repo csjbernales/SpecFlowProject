@@ -1,28 +1,65 @@
 ﻿using OpenQA.Selenium.Edge;
 
-using System.Diagnostics;
-
-using TechTalk.SpecFlow;
-
 namespace TestCases
 {
     public class BaseClass
     {
         public IWebDriver? driver;
 
-        [BeforeScenario]
-        public void BeforeScenario()
+        [Before]
+        public void Setup()
         {
             driver = new EdgeDriver();
-            Debug.WriteLine("BeforeScenario");
+            Console.WriteLine("Setup");
         }
 
-        [AfterScenario]
-        public void AfterScenario()
+        [After]
+        public void Teardown()
         {
             driver!.Close();
-            Debug.WriteLine("AfterScenario");
+            Console.WriteLine("Teardown");
         }
 
+        //-----------------------------------------------------------------
+
+        //[BeforeScenarioBlock]
+        //public void BeforeScenarioBlock()
+        //{
+        //    Console.WriteLine("BeforeScenarioBlock");
+        //}
+
+        //[AfterScenarioBlock]
+        //public void AfterScenarioBlock()
+        //{
+        //    Console.WriteLine("AfterScenarioBlock");
+        //}
+
+        //-----------------------------------------------------------------
+
+        //[BeforeFeature]
+        //public static void BeforeFeature()
+        //{
+        //    Console.WriteLine("BeforeFeature");
+        //}
+
+        //[AfterFeature]
+        //public static void AfterFeature()
+        //{
+        //    Console.WriteLine("AfterFeature");
+        //}
+
+        ////-----------------------------------------------------------------
+
+        //[BeforeTestRun]
+        //public static void BeforeTestRun()
+        //{
+        //    Console.WriteLine("BeforeTestRun");
+        //}
+
+        //[AfterTestRun]
+        //public static void AfterTestRun()
+        //{
+        //    Console.WriteLine("AfterTestRun");
+        //}
     }
 }

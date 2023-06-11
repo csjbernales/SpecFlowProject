@@ -1,4 +1,4 @@
-﻿namespace PageObjectModel.Google
+﻿namespace PageObjectModel.Youtube
 {
     public class YoutubeHomepage
     {

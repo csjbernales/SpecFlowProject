@@ -1,18 +1,21 @@
-using PageObjectModel.Google;
+using PageObjectModel.Youtube;
+
+using System;
+using TechTalk.SpecFlow;
 
 namespace TestCases.StepDefinitions
 {
     [Binding]
-    public class SearchFireshipOnGoogleStepDefinitions : BaseClass
+    public class YoutubeSearchStepDefinitions : BaseClass
     {
-        [Given(@"Launch browser and navigate to https://www.google.com")]
+        [Given(@"Launch browser and navigate to https://www.youtube.com")]
         public void GivenLaunchBrowser()
         {
             driver!.Manage().Window.Maximize();
         }
 
         [When(@"Webpage is on (.*)")]
-        public void WhenWebpageIsOnGoogle_Com(string url)
+        public void WhenWebpageIsOnYoutube_Com(string url)
         {
             driver!.Navigate().GoToUrl(url);
         }
@@ -20,10 +23,10 @@ namespace TestCases.StepDefinitions
         [Then(@"search (.*) on searchbar")]
         public void ThenSearchFireshipOnSearchbar(string keyword)
         {
-            GoogleHomepage homepage = new(driver!);
+            YoutubeHomepage homepage = new(driver!);
             Util.TextThenEnter(homepage.SearchBox!, keyword);
 
-            driver.FindElement(By.XPath($"(//span[contains(.,'{keyword}')])[1]"), WaitForElement.Visible);
+            driver.FindElement(By.XPath($"(//span[contains(.,'{keyword}')])[1]"), WaitForElement.Exists);
         }
     }
 }
