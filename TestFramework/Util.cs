@@ -1,20 +1,13 @@
-
-
-using PageObjectModel.Google;
-
 namespace TestFramework
 {
-    public class Util
+    public static class Util
     {
-        protected Util()
+        public static IWebElement TextThenEnter(this IWebElement element, string keyword)
         {
-            
-        }
+            element.SendKeys(keyword);
+            element.SendKeys(Keys.Enter);
 
-        public static void TextThenEnter<T>(string keyword, T page) where T : IObjectInterface
-        {
-            page.SearchBox.SendKeys(keyword);
-            page.SearchBox.SendKeys(Keys.Enter);
+            return element;
         }
     }
 }
