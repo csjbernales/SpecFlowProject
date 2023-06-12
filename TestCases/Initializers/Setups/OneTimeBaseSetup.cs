@@ -47,7 +47,7 @@ namespace TestCases.Initializers.Setups
             }
 
             Driver!.Manage().Window.Maximize();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
 
             return Driver;
         }

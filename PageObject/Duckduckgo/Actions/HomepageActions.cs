@@ -10,12 +10,15 @@ namespace PageObject.Duckduckgo.Actions
         public IWebDriver? WebDriver { get; set; }
         public Data? Data { get; set; }
 
-        public Homepage? GoToHomePage()
+        private Homepage? Homepage;
+
+        public void GoToHomePage()
         {
             Data ??= GetTestData();
+            Homepage ??= new Homepage(WebDriver!);
 
             WebDriver!.Navigate().GoToUrl(Data!.DuckduckgoUrl);
-            return new Homepage(WebDriver);
+            Homepage.SearchBox!.WaitToBeVisible();
         }
 
         private static Data GetTestData()

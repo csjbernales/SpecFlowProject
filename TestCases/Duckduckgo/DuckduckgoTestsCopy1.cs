@@ -3,13 +3,13 @@ using PageObject.Duckduckgo.Pages;
 using TestCases.Initializers;
 using TestCases.Initializers.Setups;
 
-namespace TestCases.Google
+namespace TestCases.Duckduckgo
 {
     public class DuckduckgoTestsCopy1 : BaseSetup
     {
         [Test]
         [TestCaseSource(nameof(RunOnSpecifiedBrowser))]
-        public void GSearch(string[] testData)
+        public void DSearch(string[] testData)
         {
             //arrange
             Driver = InitializeBrowser(testData[0]);
@@ -20,10 +20,10 @@ namespace TestCases.Google
             homepage.SearchBox!.SendKeys(testData[1]);
             homepage.SearchBox!.SendKeys(Keys.Enter);
 
-            IWebElement webResult = Driver.FindElement(By.XPath($"(//span[contains(.,'Fireship')])[1]"), WaitForElement.Exists);
+            bool webResult = Driver.FindElement(By.XPath($"(//span[contains(.,'{testData[1]}')])[1]"), WaitForElement.Visible).WaitToBeVisible();
 
             //assert
-            webResult.Should().NotBeNull();
+            webResult.Should().BeTrue();
         }
 
         private static IEnumerable<string[]> RunOnSpecifiedBrowser()

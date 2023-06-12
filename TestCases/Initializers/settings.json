@@ -7,6 +7,6 @@
 
 
   //"firefoxConfig": [ "--headless" ],
-  //"chromeConfig": [ "--headless", "--ignore-certificate-errors" ],
-  //"edgeConfig": [ "--headless", "--incognito" ]
+  //"chromeConfig": [ "--headless" ],
+  //"edgeConfig": [ "--headless" ]
 }
