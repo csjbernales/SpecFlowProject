@@ -1,6 +1,6 @@
 ﻿namespace TestCases.Initializers
 {
-    public class AppsettingsConfig
+    public struct AppsettingsConfig
     {
         public string[]? BrowsersToRun { get; set; }
         public string[]? ChromeConfig { get; set; }

@@ -31,19 +31,19 @@ namespace TestCases.Initializers
             {
                 case "chrome":
                     ChromeOptions chromeOptions = new();
-                    chromeOptions.AddArguments(AppsettingsConfig!.ChromeConfig);
+                    chromeOptions.AddArguments(AppsettingsConfig!.Value.ChromeConfig);
                     Driver = new ChromeDriver(chromeOptions);
                     break;
 
                 case "firefox":
                     FirefoxOptions firefoxOptions = new();
-                    firefoxOptions.AddArguments(AppsettingsConfig!.FirefoxConfig);
+                    firefoxOptions.AddArguments(AppsettingsConfig!.Value.FirefoxConfig);
                     Driver = new FirefoxDriver(firefoxOptions);
                     break;
 
                 case "edge":
                     EdgeOptions edgeOptions = new();
-                    edgeOptions.AddArguments(AppsettingsConfig!.EdgeConfig);
+                    edgeOptions.AddArguments(AppsettingsConfig!.Value.EdgeConfig);
                     Driver = new EdgeDriver(edgeOptions);
                     break;
             }
@@ -59,7 +59,7 @@ namespace TestCases.Initializers
 #pragma warning restore NUnit1028 // The non-test method is public
         {
             AppsettingsConfig ??= Configuration.GetTestConfig();
-            foreach (var browser in AppsettingsConfig.BrowsersToRun!)
+            foreach (var browser in AppsettingsConfig.Value.BrowsersToRun!)
             {
                 yield return browser;
             }
