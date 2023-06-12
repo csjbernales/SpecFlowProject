@@ -4,7 +4,7 @@ using OpenQA.Selenium.Firefox;
 
 [assembly: LevelOfParallelism(25)]
 
-namespace TestCases.Initializers
+namespace TestCases.Initializers.Setups
 {
     public class OneTimeBaseSetup
     {
@@ -14,7 +14,7 @@ namespace TestCases.Initializers
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            Console.WriteLine("Test start");
+
         }
 
         [OneTimeTearDown]
@@ -23,9 +23,7 @@ namespace TestCases.Initializers
             Driver!.Quit();
         }
 
-#pragma warning disable NUnit1028 // The non-test method is public
         public IWebDriver InitializeBrowser(string browserType)
-#pragma warning restore NUnit1028 // The non-test method is public
         {
             switch (browserType)
             {
@@ -54,9 +52,7 @@ namespace TestCases.Initializers
             return Driver;
         }
 
-#pragma warning disable NUnit1028 // The non-test method is public
         public static IEnumerable<string> RunOnSpecifiedBrowser()
-#pragma warning restore NUnit1028 // The non-test method is public
         {
             AppsettingsConfig ??= Configuration.GetTestConfig();
             foreach (var browser in AppsettingsConfig.Value.BrowsersToRun!)

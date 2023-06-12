@@ -18,10 +18,14 @@ namespace PageObject.Google.Actions
             return new Homepage(WebDriver);
         }
 
-        public static Data GetTestData()
+        private static Data GetTestData()
         {
-            string currentDirectory = Directory.GetCurrentDirectory().Split("bin")[0].Split("TestCases")[0] + "PageObject";
+            string currentDirectory = Directory.GetCurrentDirectory()
+                .Split("bin")[0]
+                .Split("TestCases")[0] + "PageObject";
+
             string path = Path.Combine(currentDirectory, "TestData", "data.json");
+
             Data data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(path))!;
             return data;
         }
