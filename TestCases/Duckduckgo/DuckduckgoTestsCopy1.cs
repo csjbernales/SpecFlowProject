@@ -7,7 +7,7 @@ namespace TestCases.Duckduckgo
 {
     public class DuckduckgoTestsCopy1 : BaseSetup
     {
-        private BrowserConfig browserConfig;
+        private BrowserConfig? browserConfig;
 
         [SetUp]
         public void SetUp()
@@ -20,7 +20,7 @@ namespace TestCases.Duckduckgo
         public void DSearch(string[] testData)
         {
             //arrange
-            Driver = browserConfig.InitializeBrowser(testData[0]);
+            Driver = browserConfig!.InitializeBrowser(testData[0]);
             Homepage homepage = new(Driver!);
 
             //act
