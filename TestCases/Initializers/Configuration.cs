@@ -12,7 +12,16 @@ namespace TestCases.Initializers
 
         public static AppsettingsConfig GetTestConfig()
         {
-            string path = Path.Combine(GetProjectRootDirectory(), "Initializers", "settings.json");
+            const string defaultFileName = "settings.json";
+            const string localFileName = "settings.local.json";
+
+            string path = Path.Combine(GetProjectRootDirectory(), "Initializers", localFileName);
+
+            if (!File.Exists(path))
+            {
+                path = Path.Combine(GetProjectRootDirectory(), "Initializers", defaultFileName);
+            }
+
             AppsettingsConfig appsettingsConfig = JsonConvert.DeserializeObject<AppsettingsConfig>(File.ReadAllText(path))!;
             return appsettingsConfig;
         }

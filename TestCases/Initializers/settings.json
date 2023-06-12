@@ -1,12 +1,7 @@
 ﻿{
   "browsersToRun": [ "chrome", "firefox", "edge" ],
 
-  "firefoxConfig": [ "--start-maximized" ],
-  "chromeConfig": [ "--incognito" ],
-  "edgeConfig": [ "--incognito" ],
-
-
-  //"firefoxConfig": [ "--headless" ],
-  //"chromeConfig": [ "--headless" ],
-  //"edgeConfig": [ "--headless" ]
+  "firefoxConfig": [ "--headless" ],
+  "chromeConfig": [ "--headless" ],
+  "edgeConfig": [ "--headless" ]
 }

@@ -6,5 +6,7 @@
         public string[]? ChromeConfig { get; set; }
         public string[]? FirefoxConfig { get; set; }
         public string[]? EdgeConfig { get; set; }
+        public string[]? SafariConfig { get; set; }
+        public string[]? IEConfig { get; set; }
     }
 }

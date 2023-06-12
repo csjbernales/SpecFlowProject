@@ -7,12 +7,20 @@ namespace TestCases.Duckduckgo
 {
     public class DuckduckgoTestsCopy2 : BaseSetup
     {
+        private BrowserConfig browserConfig;
+
+        [SetUp]
+        public void SetUp()
+        {
+            browserConfig = new BrowserConfig();
+        }
+
         [Test]
         [TestCaseSource(nameof(RunOnSpecifiedBrowser))]
         public void DSearch(string[] testData)
         {
             //arrange
-            Driver = InitializeBrowser(testData[0]);
+            Driver = browserConfig.InitializeBrowser(testData[0]);
             Homepage homepage = new(Driver!);
 
             //act
@@ -38,10 +46,7 @@ namespace TestCases.Duckduckgo
                 {
                     browser, testData1
                 };
-            }
 
-            foreach (string browser in AppConfig!.Value.BrowsersToRun!)
-            {
                 yield return new string[]
                 {
                     browser, testData2
