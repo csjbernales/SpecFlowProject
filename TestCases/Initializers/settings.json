@@ -1,0 +1,7 @@
+﻿{
+  "browsersToRun": [ "chrome", "firefox", "edge" ],
+
+  "firefoxConfig": [ "--headless" ],
+  "chromeConfig": [ "--ignore-certificate-errors" ],
+  "edgeConfig": [ "--incognito" ]
+}

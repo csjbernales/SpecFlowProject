@@ -1,4 +1,6 @@
-using PageObject.Google;
+using PageObject.Google.Pages;
+
+using TestCases.Initializers;
 
 namespace TestCases.Google
 {
@@ -8,9 +10,9 @@ namespace TestCases.Google
 
         [Test]
         [TestCaseSource(nameof(RunOnSpecifiedBrowser))]
-        public void PerformGoogleSearchWithKeywordFireship(string browser)
+        public void PerformGoogleSearchWithKeywordFireship(string browserType)
         {
-            Driver = Init(browser);
+            Driver = InitializeBrowser(browserType);
             Homepage homepage = new(Driver!);
             homepage.GoToHomePage();
             homepage.SearchBox!.SendKeys("Fireship");
