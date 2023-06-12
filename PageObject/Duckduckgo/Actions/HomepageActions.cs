@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 
-using PageObject.Google.Pages;
+using PageObject.Duckduckgo.Pages;
 using PageObject.TestData;
 
-namespace PageObject.Google.Actions
+namespace PageObject.Duckduckgo.Actions
 {
     public class HomepageActions
     {
@@ -12,9 +12,9 @@ namespace PageObject.Google.Actions
 
         public Homepage? GoToHomePage()
         {
-            this.Data ??= GetTestData();
+            Data ??= GetTestData();
 
-            WebDriver!.Navigate().GoToUrl(Data!.GoogleUrl);
+            WebDriver!.Navigate().GoToUrl(Data!.DuckduckgoUrl);
             return new Homepage(WebDriver);
         }
 

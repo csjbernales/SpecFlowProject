@@ -2,6 +2,6 @@
 {
     public class Data
     {
-        public string? GoogleUrl { get; init; }
+        public string? DuckduckgoUrl { get; init; }
     }
 }
