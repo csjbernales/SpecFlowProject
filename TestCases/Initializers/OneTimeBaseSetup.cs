@@ -8,7 +8,7 @@ namespace TestCases.Initializers
 {
     public class OneTimeBaseSetup
     {
-        public static AppsettingsConfig? AppsettingsConfig { get; set; } = null;
+        private static AppsettingsConfig? AppsettingsConfig { get; set; } = null;
         public IWebDriver? Driver { get; set; } = null;
 
         [OneTimeSetUp]
@@ -31,19 +31,19 @@ namespace TestCases.Initializers
             {
                 case "chrome":
                     ChromeOptions chromeOptions = new();
-                    chromeOptions.AddArguments(AppsettingsConfig.ChromeConfig);
+                    chromeOptions.AddArguments(AppsettingsConfig!.ChromeConfig);
                     Driver = new ChromeDriver(chromeOptions);
                     break;
 
                 case "firefox":
                     FirefoxOptions firefoxOptions = new();
-                    firefoxOptions.AddArguments(AppsettingsConfig.FirefoxConfig);
+                    firefoxOptions.AddArguments(AppsettingsConfig!.FirefoxConfig);
                     Driver = new FirefoxDriver(firefoxOptions);
                     break;
 
                 case "edge":
                     EdgeOptions edgeOptions = new();
-                    edgeOptions.AddArguments(AppsettingsConfig.EdgeConfig);
+                    edgeOptions.AddArguments(AppsettingsConfig!.EdgeConfig);
                     Driver = new EdgeDriver(edgeOptions);
                     break;
             }
