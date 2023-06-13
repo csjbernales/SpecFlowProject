@@ -8,3 +8,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Setups.BaseSetup.TearDown")]
 [assembly: SuppressMessage("Critical Code Smell", "S1186:Methods should not be empty", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Setups.BaseSetup.Setup")]
 [assembly: SuppressMessage("Critical Code Smell", "S1186:Methods should not be empty", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Setups.OneTimeBaseSetup.OneTimeSetup")]
+[assembly: SuppressMessage("Style", "IDE0251:Make member 'readonly'", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Settings.BrowsersToRun~System.String[]")]

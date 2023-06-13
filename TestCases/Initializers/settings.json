@@ -1,7 +1,7 @@
 ﻿{
-  "browsersToRun": [ "chrome", "firefox", "edge" ],
+  "BrowserList": [ "chrome" ,"firefox", "edge" ],
 
-  "firefoxConfig": [ "--headless" ],
-  "chromeConfig": [ "--headless" ],
-  "edgeConfig": [ "--headless" ]
+  "firefoxConfig": [ "--headless", "window-size=1920,1080", "--test-type", "--ignore-certificate-errors" ],
+  "chromeConfig": [ "--headless=new", "window-size=1920,1080", "--test-type", "--ignore-certificate-errors", "--no-sandbox" ],
+  "edgeConfig": [ "--headless=new", "window-size=1920,1080", "--test-type", "--ignore-certificate-errors", "--no-sandbox" ]
 }

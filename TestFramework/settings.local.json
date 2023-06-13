@@ -1,0 +1,16 @@
+﻿{
+  "BrowserList": [ "chrome", "firefox", "edge" ],
+
+  "firefoxConfig": [
+    "--private",
+    "--ignore-certificate-errors"
+  ],
+  "chromeConfig": [
+    "--incognito",
+    "--ignore-certificate-errors"
+  ],
+  "edgeConfig": [
+    "--incognito",
+    "--ignore-certificate-errors"
+  ]
+}

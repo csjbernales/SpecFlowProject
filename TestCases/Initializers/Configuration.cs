@@ -10,7 +10,7 @@ namespace TestCases.Initializers
             return currentDirectory.Split("bin")[0];
         }
 
-        public static AppsettingsConfig GetTestConfig()
+        public static Settings GetSettingsConfig()
         {
             const string defaultFileName = "settings.json";
             const string localFileName = "settings.local.json";
@@ -22,8 +22,8 @@ namespace TestCases.Initializers
                 path = Path.Combine(GetProjectRootDirectory(), "Initializers", defaultFileName);
             }
 
-            AppsettingsConfig appsettingsConfig = JsonConvert.DeserializeObject<AppsettingsConfig>(File.ReadAllText(path))!;
-            return appsettingsConfig;
+            Settings settings = JsonConvert.DeserializeObject<Settings>(File.ReadAllText(path))!;
+            return settings;
         }
     }
 }

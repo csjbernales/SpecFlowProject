@@ -1,10 +1,10 @@
-﻿[assembly: LevelOfParallelism(20)]
+﻿[assembly: LevelOfParallelism(5)]
 
 namespace TestCases.Initializers.Setups
 {
     public class OneTimeBaseSetup
     {
-        public static AppsettingsConfig? AppConfig { get; set; } = null;
+        public static Settings? Settings { get; set; } = null;
         public IWebDriver? Driver { get; set; } = null;
 
         [OneTimeSetUp]

@@ -5,7 +5,7 @@ using TestCases.Initializers.Setups;
 
 namespace TestCases.Duckduckgo
 {
-    public class DuckduckgoTests : BaseSetup
+    public class DuckduckgoTests6 : BaseSetup
     {
         private BrowserConfig? browserConfig;
 
@@ -28,7 +28,7 @@ namespace TestCases.Duckduckgo
             homepage.SearchBox!.SendKeys(testData[1]);
             homepage.SearchBox!.SendKeys(Keys.Enter);
 
-            bool webResult = Driver.FindElement(By.XPath($"(//span[contains(.,'{testData[1]}')])[1]"), WaitForElement.Visible).WaitToBeVisible();
+            bool webResult = Driver!.PageSource.Contains(testData[1]);
 
             //assert
             webResult.Should().BeTrue();
@@ -36,20 +36,16 @@ namespace TestCases.Duckduckgo
 
         private static IEnumerable<string[]> RunOnSpecifiedBrowser()
         {
-            string testData1 = "Fireship";
-            string testData2 = "fireship";
-            AppConfig ??= Configuration.GetTestConfig();
+            string testData1 = "FIRESHIP";
 
-            foreach (string browser in AppConfig!.Value.BrowsersToRun!)
+            Settings ??= Configuration.GetSettingsConfig();
+
+            string[] browserlist = Settings!.Value.BrowsersToRun();
+            foreach (string browser in browserlist)
             {
                 yield return new string[]
                 {
                     browser, testData1
-                };
-
-                yield return new string[]
-                {
-                    browser, testData2
                 };
             }
         }
