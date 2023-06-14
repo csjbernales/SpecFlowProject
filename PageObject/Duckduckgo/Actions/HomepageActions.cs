@@ -15,6 +15,7 @@ namespace PageObject.Duckduckgo.Actions
         public void GoToHomePage()
         {
             Data ??= GetTestData();
+            Utils.WebDriver = WebDriver;
             Homepage ??= new Homepage(WebDriver!);
 
             WebDriver!.Navigate().GoToUrl(Data!.DuckduckgoUrl);
