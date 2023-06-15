@@ -9,3 +9,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Critical Code Smell", "S1186:Methods should not be empty", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Setups.BaseSetup.Setup")]
 [assembly: SuppressMessage("Critical Code Smell", "S1186:Methods should not be empty", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Setups.OneTimeBaseSetup.OneTimeSetup")]
 [assembly: SuppressMessage("Style", "IDE0251:Make member 'readonly'", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Settings.BrowsersToRun~System.String[]")]
+[assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Setups.BrowserConfig.InitializeBrowser(System.String)~OpenQA.Selenium.IWebDriver")]
+[assembly: SuppressMessage("Critical Code Smell", "S1186:Methods should not be empty", Justification = "<Pending>", Scope = "member", Target = "~M:TestCases.Initializers.Setups.OneTimeBaseSetup.OneTimeTearDown")]

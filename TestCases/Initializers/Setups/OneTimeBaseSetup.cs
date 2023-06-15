@@ -1,4 +1,4 @@
-﻿[assembly: LevelOfParallelism(5)]
+﻿[assembly: LevelOfParallelism(10)]
 
 namespace TestCases.Initializers.Setups
 {
@@ -15,7 +15,6 @@ namespace TestCases.Initializers.Setups
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Driver!.Quit();
         }
     }
 }

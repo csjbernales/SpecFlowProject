@@ -11,7 +11,7 @@
         [TearDown]
         public void TearDown()
         {
-            Driver!.Close();
+            Driver!.Quit();
         }
     }
 }

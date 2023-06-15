@@ -38,10 +38,8 @@ namespace TestCases.Duckduckgo
         {
             string testData1 = "FIRESHIP";
 
-
             Settings ??= Configuration.GetSettingsConfig();
-            string[] browserlist = Settings!.Value.BrowsersToRun();
-            foreach (string browser in browserlist)
+            foreach (string browser in Settings.Value.BrowserList!)
             {
                 yield return new string[]
                 {

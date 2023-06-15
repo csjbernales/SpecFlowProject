@@ -12,9 +12,13 @@ namespace PageObject.Duckduckgo.Actions
 
         private Homepage? Homepage;
 
-        public void GoToHomePage()
+        public HomepageActions()
         {
             Data ??= GetTestData();
+        }
+
+        public void GoToHomePage()
+        {
             Utils.WebDriver = WebDriver;
             Homepage ??= new Homepage(WebDriver!);
 

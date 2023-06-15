@@ -13,16 +13,19 @@ namespace TestCases.Initializers.Setups
                 case "chrome":
                     ChromeOptions chromeOptions = new();
                     chromeOptions.AddArguments(Settings!.Value.ChromeConfig);
+                    chromeOptions.PageLoadStrategy = PageLoadStrategy.Normal;
                     return new ChromeDriver(chromeOptions);
 
                 case "firefox":
                     FirefoxOptions firefoxOptions = new();
                     firefoxOptions.AddArguments(Settings!.Value.FirefoxConfig);
-                    return new FirefoxDriver(firefoxOptions);
+                    firefoxOptions.PageLoadStrategy = PageLoadStrategy.Normal;
+                    return new FirefoxDriver(FirefoxDriverService.CreateDefaultService(), firefoxOptions);
 
                 case "edge":
                     EdgeOptions edgeOptions = new();
                     edgeOptions.AddArguments(Settings!.Value.EdgeConfig);
+                    edgeOptions.PageLoadStrategy = PageLoadStrategy.Normal;
                     return new EdgeDriver(edgeOptions);
             }
 

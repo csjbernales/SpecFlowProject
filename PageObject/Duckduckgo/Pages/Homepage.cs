@@ -12,7 +12,7 @@ namespace PageObject.Duckduckgo.Pages
 
         public Homepage(IWebDriver webDriver)
         {
-            WebDriver ??= webDriver;
+            WebDriver = webDriver;
             PageFactory.InitElements(WebDriver, this);
         }
     }
