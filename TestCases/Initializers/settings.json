@@ -1,32 +1,35 @@
 ﻿{
-  "BrowserList": [ "chrome" ,"firefox", "edge" ],
+  "BrowserList": [ "chrome", "firefox", "edge" ],
 
   "firefoxConfig": [
     "--headless",
+    "--private",
     "--width=1920",
     "--height=1080",
-    "--test-type",
     "--ignore-certificate-errors",
+    "--test-type",
     "--disable-dev-shm-usage",
     "--disable-browser-side-navigation",
     "--disable-gpu"
   ],
   "chromeConfig": [
-    "--headless=new",
-    "--window-size=1920,1080",
-    "--test-type",
+    "--headless",
+    "--incognito",
     "--ignore-certificate-errors",
+    "--test-type",
     "--no-sandbox",
+    "--start-maximized",
     "--disable-dev-shm-usage",
     "--disable-browser-side-navigation",
     "--disable-gpu"
   ],
   "edgeConfig": [
-    "--headless=new",
-    "--window-size=1920,1080",
-    "--test-type",
+    "--headless",
+    "--incognito",
     "--ignore-certificate-errors",
+    "--test-type",
     "--no-sandbox",
+    "--start-maximized",
     "--disable-dev-shm-usage",
     "--disable-browser-side-navigation",
     "--disable-gpu"

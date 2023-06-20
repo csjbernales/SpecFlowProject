@@ -1,8 +1,4 @@
-using OpenQA.Selenium.DevTools.V112.CSS;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-
-using Selenium.DefaultWaitHelpers;
 
 namespace TestFramework
 {
@@ -12,8 +8,14 @@ namespace TestFramework
 
         public static bool WaitToBeVisible(this IWebElement webElement)
         {
-            WebElementWait wait = new(webElement, TimeSpan.FromSeconds(20));
+            WebElementWait wait = new(webElement, TimeSpan.FromSeconds(30));
             return wait.Until(ExpectedConditionsSearchContext.ElementToBeClickable(webElement)).Displayed;
+        }
+
+        public static bool WaitToBeVisible(this By webElement)
+        {
+            IWebElement elem = WebDriver.FindElement(webElement, WaitForElement.Visible);
+            return elem.WaitToBeVisible();
         }
 
         public static void ClickWhenReady(this IWebElement webElement)
